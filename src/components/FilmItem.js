@@ -9,7 +9,10 @@ const FilmItem = ({film, onFilmClick}) => {
   return (
     <div>
     <p>{film.title}</p>
-    <FilmItem onClick={handleClick}>{film.title}</FilmItem>
+    <button onClick={handleClick}>More Info</button>
+    <hr></hr>
+    
+   
     
     </div>
   )

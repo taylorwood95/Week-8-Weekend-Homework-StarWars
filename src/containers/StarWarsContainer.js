@@ -44,7 +44,7 @@ const StarWarsContainer = () => {
 
         
         
-        setFilms(data.results.sort((a,b)=> {return a.episode_id - b.episode.id}))
+        setFilms(data.results.sort((a,b)=> {return a.episode_id - b.episode_id}))
 
     })}
         
@@ -72,8 +72,9 @@ const StarWarsContainer = () => {
 
          
     
-        <FilmList films={films} onFilmClick={onFilmClick}/>
-         <FilmDetail film={selectedFilm} characters={characters}/> 
+        
+         {selectedFilm ? <FilmDetail film={selectedFilm} characters={characters}/> : null}
+         <FilmList films={films} onFilmClick={onFilmClick}/>
      
 
         
