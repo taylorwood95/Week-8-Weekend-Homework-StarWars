@@ -2,6 +2,9 @@ import React, {useEffect, useState} from "react";
 import FilmList from "../components/FilmList";
 import FilmDetail from "../components/FilmDetail";
 import CharacterDetail from "../components/CharacterDetail";
+import NavBar from "../components/NavBar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Starships from "../components/Starships";
 
 
 const StarWarsContainer = () => {
@@ -69,12 +72,21 @@ const StarWarsContainer = () => {
     return (
         <>
         <div>Star Wars Container</div>
+        <Router>
+        <NavBar/>
+        <Routes>
+        {selectedFilm ? <FilmDetail film={selectedFilm} characters={characters}/> : null}
+        <Route path="/" element={<FilmList films={films} onFilmClick={onFilmClick}/>} />
+        <Route path="/starships" element={<Starships/>}/>
+        </Routes> 
+        </Router>
+        
 
          
     
         
-         {selectedFilm ? <FilmDetail film={selectedFilm} characters={characters}/> : null}
-         <FilmList films={films} onFilmClick={onFilmClick}/>
+        
+     
      
 
         
