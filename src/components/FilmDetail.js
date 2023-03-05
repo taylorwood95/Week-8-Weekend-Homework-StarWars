@@ -14,7 +14,7 @@ const FilmDetail = ({characters, film}) => {
     <div>
         
             
-            <ul>{characterNodes}</ul>
+    <ul>{characterNodes}</ul>
         
     </div>
   )

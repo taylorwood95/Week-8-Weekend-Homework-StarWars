@@ -1,10 +1,19 @@
 import React from 'react'
+import StarshipItem from './StarshipItem';
+import "./Starships.css"
 
-const Starships = () => {
+const Starships = ({starships}) => {
+
+    const starshipNodes = starships.map((starship, index) => {
+        return <StarshipItem key={index} starship={starship}/>
+    });
+
+    
+
   return (
     <>
-    <div>Starships</div>
-    <h1>Starship...</h1>
+    <h1 className='starship-header'>Starship List</h1>
+    <ul>{starshipNodes}</ul>
     </>
   )
 }

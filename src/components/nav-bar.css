@@ -1,0 +1,15 @@
+.nav-bar {
+    font-family: 'Star Wars', sans-serif;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+    font-size: 30px;
+    height: 100%;
+    width: 100%
+  };
+  
+.home-link {
+    color: white;
+}

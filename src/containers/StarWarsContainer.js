@@ -12,6 +12,7 @@ const StarWarsContainer = () => {
     const [films, setFilms] = useState([])
     const [selectedFilm, setSelectedFilm] = useState(null)
     const [characters, setCharacters] = useState([])
+    const [starships, setStarships] = useState([])
 
     useEffect(() => {
 
@@ -23,6 +24,12 @@ const StarWarsContainer = () => {
         getCharacters();
 
     }, [selectedFilm])
+
+    useEffect (() => {
+        setStarships([])
+
+        getStarships()
+    }, [])
 
     const getCharacters = () => {
         if(selectedFilm){
@@ -38,6 +45,13 @@ const StarWarsContainer = () => {
     
         );
     }};
+
+    const getStarships = () => {
+        fetch("https://swapi.dev/api/starships/")
+        .then(res => res.json())
+        .then(data  => setStarships(data.results.splice(0,5)))
+
+    };
 
 
     const getFilms = () => {
@@ -57,6 +71,8 @@ const StarWarsContainer = () => {
     const onFilmClick = (film) => {
 
           setSelectedFilm(film)
+          
+
 
     
 };
@@ -71,13 +87,13 @@ const StarWarsContainer = () => {
 
     return (
         <>
-        <div>Star Wars Container</div>
+        <div className="header">Star Wars</div>
+        <FilmDetail film={selectedFilm} characters={characters}/>
         <Router>
         <NavBar/>
         <Routes>
-        {selectedFilm ? <FilmDetail film={selectedFilm} characters={characters}/> : null}
         <Route path="/" element={<FilmList films={films} onFilmClick={onFilmClick}/>} />
-        <Route path="/starships" element={<Starships/>}/>
+        <Route path="/starships" element={<Starships starships={starships}/>}/>
         </Routes> 
         </Router>
         

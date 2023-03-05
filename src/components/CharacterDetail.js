@@ -1,11 +1,12 @@
 import React from 'react'
+import "./CharacterDetail.css"
 
 const CharacterDetail= ({character}) => {
   return (
 
 
-    <div>
-        <h2>{character.name}</h2>
+    <div className="div">
+        <p className='character-name'>{character.name}</p>
     </div>
 
   )

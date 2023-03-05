@@ -1,5 +1,7 @@
 import React from "react";
 import FilmItem from "./FilmItem";
+import "./FilmList.css"
+
 
 
 
@@ -14,7 +16,7 @@ import FilmItem from "./FilmItem";
 
   return (
     <div>
-        <p>Movie List</p>
+        <p className="movie-list">Movie List</p>
     <ul>{filmNodes}</ul>
     </div>
   )

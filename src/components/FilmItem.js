@@ -1,4 +1,5 @@
 import React from 'react'
+import "./FilmItem.css"
 
 const FilmItem = ({film, onFilmClick}) => {
 
@@ -7,9 +8,10 @@ const FilmItem = ({film, onFilmClick}) => {
     }
 
   return (
-    <div>
-    <p>{film.title}</p>
-    <button onClick={handleClick}>More Info</button>
+    <div className='div'>
+    <p className='title'>{film.title}</p>
+    <p  className='episode-id'>{film.episode_id}</p>
+    <button className="button" onClick={handleClick}>More Details</button>
     <hr></hr>
     
    
